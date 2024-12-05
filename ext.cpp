@@ -2,6 +2,7 @@
 #include <iostream>
 #include <cmath>
 
+
 template <typename T>
 std::string toString(T val) {
     std::ostringstream oss;
@@ -75,23 +76,23 @@ BigInt::BigInt(const long& value) {                                     //кон
     nums = toString(value);
 }
 
-BigInt::operator int() {                                                //приведение к инту
+BigInt::operator int() const {                                                //приведение к инту
     return atoi(nums.c_str()); 
 }
 
-BigInt::operator std::string() {                                        //приведение к стрингу
+BigInt::operator std::string() const {                                        //приведение к стрингу
     return nums;
 }
 
-BigInt::operator short() {                                              //приведение к шорту
+BigInt::operator short() const {                                              //приведение к шорту
     return atoi(nums.c_str());
 }
 
-BigInt::operator char() {                                               //приведение к чару
+BigInt::operator char() const {                                               //приведение к чару
     return atoi(nums.c_str());
 }
 
-BigInt::operator long() {                                               //приведение к лонгу
+BigInt::operator long() const {                                               //приведение к лонгу
     long res = 0;
     int i; 
     int leng = nums.size();
@@ -115,6 +116,8 @@ void BigInt::print() {                                                  //фун
 }
 
 std::string BigInt::getValue() const {return nums;}                     //получение значения
+
+
 
 BigInt BigInt::GCD(BigInt left, BigInt right) {
     std::string num1 = left.nums;
@@ -150,6 +153,9 @@ BigInt BigInt::LCD(BigInt left, BigInt right) {
     return res;
 }
 
+bool BigInt::operator==(BigInt value) {
+	return (this->nums == value.nums);
+}
 BigInt BigInt::operator=(std::string v) {                               //перегруженный оператор присваивания
     nums = v;
     return *this;

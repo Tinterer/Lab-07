@@ -17,18 +17,18 @@ public:
     BigInt(const char& a);                          //
     BigInt(const long& a);                          //
 
-    operator int();                                 //      
-    operator std::string();                         //      
-    operator short();                               //      Приведение длинного целого к базовым типам данных
-    operator char();                                //      
-    operator long();                                //      
+    operator int() const;                                 //      
+    operator std::string() const ;                         //      
+    operator short() const;                               //      Приведение длинного целого к базовым типам данных
+    operator char() const;                                //      
+    operator long() const;                               //      
 
     BigInt GCD(BigInt left, BigInt right);
     BigInt LCD(BigInt left, BigInt right);
     void print();
     std::string getValue() const;
     
-
+    bool operator==(BigInt value);
     BigInt operator=(std::string value);            //
     BigInt operator+(BigInt value2);                //      Операторы + и - и *
     BigInt operator-(BigInt value);                 //
