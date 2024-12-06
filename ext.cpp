@@ -197,6 +197,8 @@ BigInt BigInt::operator+(BigInt value)  {
         while (num2.size() < num1.size()) {
             num2 = "0" + num2;
         }
+	
+	size1 = num1.size();
 
         // Сложение чисел справа налево
         for (i = size1 - 1; i >= 0; --i) {
